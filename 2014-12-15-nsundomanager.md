@@ -191,7 +191,7 @@ Sometimes the undo manager's list of actions should be cleared to avoid confusin
 
 ## Caveats
 
-If an action has different names for undo versus redo, check whether an undo operation is occurring before setting the action name to ensure the title of the undo dialog reflects which action will be undone. An example would be a pair of opposing operations, like adding and removing an object:
+If the forward and reverse actions have different names, check whether an undo operation is occurring before setting the action name to ensure the title of the redo dialog reflects the action to be redone. An example would be a pair of opposing operations, like adding and removing an object:
 
 ```swift
 func addItem(item: NSObject) {
