@@ -153,23 +153,23 @@ Here are the results of a set of [performance benchmarks](http://nshipster.com/b
 
 Scaling a large, high-resolution (12000 ⨉ 12000 px 20 MB JPEG) source image from [NASA Visible Earth](http://visibleearth.nasa.gov/view.php?id=78314) to 1/10<sup>th</sup> the size:
 
-| Operation                          | Time _(sec)_ | σ    |
-|------------------------------------|--------------|------|
-| `UIKit`                            | 0.002        | 22%  |
-| `Core Graphics` <sup>1</sup>       | 0.006        | 9%   |
-| `Image I/O`   <sup>2</sup>         | 0.001        | 121% |
-| `Core Image` <sup>3, 4</sup>       | 0.011        | 7%   |
+| Operation                    | Time (_ms_) | Standard Deviation |
+|------------------------------|-------------|--------------------|
+| `UIKit`                      |  2          | 22%                |
+| `Core Graphics` <sup>1</sup> |  6          | 9%                 |
+| `Image I/O`   <sup>2</sup>   |  1          | 121%               |
+| `Core Image` <sup>3, 4</sup> | 11          | 7%                 |
 
 ### PNG
 
 Scaling a reasonably large (1024 ⨉ 1024 px 1MB PNG) rendering of the [Postgres.app](http://postgresapp.com) Icon to 1/10<sup>th</sup> the size:
 
-| Operation                          | Time _(sec)_ | σ    |
-|------------------------------------|--------------|------|
-| `UIKit`                            | 0.001        | 25%  |
-| `Core Graphics` <sup>5</sup>       | 0.005        | 12%  |
-| `Image I/O` <sup>6</sup>           | 0.001        | 82%  |
-| `Core Image` <sup>7</sup>          | 0.234        | 43%  |
+| Operation                    | Time (_ms_) | Standard Deviation |
+|------------------------------|-------------|--------------------|
+| `UIKit`                      |   1         | 25%                |
+| `Core Graphics` <sup>5</sup> |   5         | 12%                |
+| `Image I/O` <sup>6</sup>     |   1         | 82%                |
+| `Core Image` <sup>7</sup>    | 234         | 43%                |
 
 <sup>1, 5</sup> Results were consistent across different values of `CGInterpolationQuality`, with negligible differences in performance benchmarks.
 

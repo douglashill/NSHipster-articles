@@ -105,7 +105,7 @@ The reason why most `IBOutlet` views can get away with `weak` ownership is that 
 
 ## IBOutletCollection
 
-`IBOutlet`'s obscure step-cousin-in-law-once-removed is `IBOutletCollection`. Introduced in iOS 4, this pseudo-keyword allows collections of `IBOutlet`s to be defined in Interface Builder, by dragging connections to its collection members.
+`IBOutlet`'s obscure step-cousin-in-law-once-removed is `IBOutletCollection`. Introduced in iOS 4 and not available on OS X, this pseudo-keyword allows collections of `IBOutlet`s to be defined in Interface Builder, by dragging connections to its collection members.
 
 `IBOutletCollection` is `#define`'d in `UINibDeclarations.h` as:
 

@@ -82,10 +82,11 @@ for (NSURL *fileURL in enumerator) {
 
 ~~~{objective-c}
 NSFileManager *fileManager = [NSFileManager defaultManager];
-NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-NSString *imagesPath = [documentsPath stringByAppendingPathComponent:@"images"];
-if (![fileManager fileExistsAtPath:imagesPath]) {
-    [fileManager createDirectoryAtPath:imagesPath withIntermediateDirectories:NO attributes:nil error:nil];
+NSURL *documentsURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
+NSURL *imagesURL = [documentsURL URLByAppendingPathComponent:@"images" isDirectory:YES];
+NSError *error;
+if (![fileManager createDirectoryAtURL:imagesURL withIntermediateDirectories:YES attributes:nil error:&error]) {
+	NSLog(@"%@", error);
 }
 ~~~
 
